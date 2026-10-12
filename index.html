@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="avatar" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#2f6fb3" stroke-width="1.5">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+      </svg>
+    </div>
+    <h1>Profil Mahasiswa</h1>
+  </header>
+
+  <nav aria-label="Menu profil">
+    <ul>
+      <li><a href="#biodata" data-target="biodata" class="active">Biodata</a></li>
+      <li><a href="#pendidikan" data-target="pendidikan">Pendidikan</a></li>
+      <li><a href="#pengalaman" data-target="pengalaman">Pengalaman</a></li>
+      <li><a href="#keahlian" data-target="keahlian">Keahlian</a></li>
+      <li><a href="#publikasi" data-target="publikasi">Publikasi</a></li>
+    </ul>
+  </nav>
+
+  <section id="konten">
+    <article id="biodata" class="panel active">
+      <h2>Biodata</h2>
+      <table>
+        <tr><th>NIM</th><td>: 2025081061</td></tr>
+        <tr><th>Nama</th><td>: Dimas Syahrul Ramadhan</td></tr>
+        <tr><th>Agama</th><td>: Islam</td></tr>
+        <tr><th>Tanggal Lahir</th><td>: 5 Oktober 2006</td></tr>
+        <tr><th>Tempat Lahir</th><td>: Tangerang</td></tr>
+        <tr><th>Program Studi</th><td>: Sistem Informasi</td></tr>
+        <tr><th>Universitas</th><td>: Universitas Pembangunan Jaya</td></tr>
+      </table>
+    </article>
+
+    <article id="pendidikan" class="panel">
+      <h2>Pendidikan</h2>
+      <table>
+        <tr><th>2024 - sekarang</th><td>: S1 Sistem Informasi, Universitas Pembangunan Jaya</td></tr>
+        <tr><th>2021 - 2024</th><td>: SMA Negeri 1 Jakarta</td></tr>
+        <tr><th>2018 - 2021</th><td>: SMP Negeri 1 Jakarta</td></tr>
+        <tr><th>2012 - 2018</th><td>: SD Negeri 1 Jakarta</td></tr>
+      </table>
+    </article>
+
+    <article id="pengalaman" class="panel">
+      <h2>Pengalaman</h2>
+      <table>
+        <tr><th>2025</th><td>: Anggota Divisi Web, Himpunan Mahasiswa Sistem Informasi</td></tr>
+        <tr><th>2025</th><td>: Asisten Praktikum Pemrograman Dasar</td></tr>
+        <tr><th>2024</th><td>: Panitia Orientasi Mahasiswa Baru</td></tr>
+      </table>
+    </article>
+
+    <article id="keahlian" class="panel">
+      <h2>Keahlian</h2>
+      <table>
+        <tr><th>Web</th><td>: HTML, CSS, JavaScript</td></tr>
+        <tr><th>Pemrograman</th><td>: Python, PHP, Java</td></tr>
+        <tr><th>Database</th><td>: MySQL, PostgreSQL</td></tr>
+        <tr><th>Tools</th><td>: Git, GitHub, VS Code, Figma</td></tr>
+      </table>
+    </article>
+
+    <article id="publikasi" class="panel">
+      <h2>Publikasi</h2>
+      <ol>
+        <li>Rancang Bangun Sistem Informasi Perpustakaan Berbasis Web, Jurnal Mahasiswa SI, 2025.</li>
+        <li>Penerapan Responsive Web Design pada Website Profil, Prosiding Seminar Mahasiswa, 2026.</li>
+      </ol>
+    </article>
+  </section>
+
+  <aside>
+    <h3>Hobi:</h3>
+    <ul>
+      <li>Bulutangkis</li>
+      <li>Bola</li>
+      <li>Pemrograman</li>
+      <li>Membaca</li>
+      <li>Musik</li>
+    </ul>
+  </aside>
+
+  <footer>
+    <div class="sosmed">
+      <p>Twitter: @akun</p>
+      <p>FB: @akun</p>
+      <p>Instagram: @akun</p>
+    </div>
+    <p class="copy">&copy; Copyright 2026. All Rights Reserved</p>
+    <div class="brand">
+      <strong>Profil Web</strong>
+      <p>Slogan / Keterangan / Informasi Web</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  var links = document.querySelectorAll('nav a');
+  var panels = document.querySelectorAll('.panel');
+
+  function tampil(id) {
+    panels.forEach(function (p) { p.classList.toggle('active', p.id === id); });
+    links.forEach(function (a) { a.classList.toggle('active', a.dataset.target === id); });
+  }
+
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      tampil(a.dataset.target);
+    });
+  });
+</script>
+</body>
+</html>
